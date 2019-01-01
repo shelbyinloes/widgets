@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Grid, Row } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import Clock from "./components/Clock.js";
-import Header from "./components/Header.js";
 import Home from "./components/Home.js";
+import Nav from "./components/Nav.js";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
@@ -13,13 +13,15 @@ class App extends Component {
       <BrowserRouter>
       <div>
       <Grid fluid>
-          <Row>
-            <Header />
-          </Row>
-          <Row>
-            <Home />
-          </Row>
-        </Grid>
+        <Row>
+        <Col md={4}>
+            <Nav />
+        </Col>
+        <Col md={6}>
+          <Home />
+        </Col>
+        </Row>
+      </Grid>
         
       <Switch>
         <Route path='/' component={Home} exact />

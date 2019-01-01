@@ -1,15 +1,13 @@
 import React, {Component} from "react";
-// import {Grid, Col} from "react-bootstrap";
+// import { Col } from "react-bootstrap";
 import tools from "../images/tools.jpg";
 
 const fill = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+  // display: 'flex',
+  // justifyContent: 'center',
+  // alignItems: 'center',
   // overflow: 'hidden',
-  background: `url(${tools}) no-repeat center center`,
-  width: '100%',
-  height: '500px'
+  height: "600px"
 }
 
 // const imgStyle ={
@@ -22,8 +20,7 @@ class Home extends Component {
   render(){
     return(
       <div>
-          <div style={fill} className="mediaHome">
-          </div>
+          <img src={tools} style={fill} alt={"Widget Workshop"}/>
       </div>
     )}
 } 
