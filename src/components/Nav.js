@@ -23,7 +23,7 @@ class Nav extends Component {
   render(){
     return(
       <div style={navSection}>
-      <Grid>
+      <Grid fluid>
       <Col md={4}>
         <Row>
             <Header />

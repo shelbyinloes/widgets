@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-// import {Row, Col} from "react-bootstrap";
+import { Grid } from "react-bootstrap";
 import {NavLink} from 'react-router-dom';
 import '../App.css';
 import logo from '../images/logo.png';
@@ -15,11 +15,11 @@ const header = {
 class Header extends Component {
   render(){
     return(
-      <div>
+      <Grid fluid>
         <NavLink to="/">
               <img src={logo} style={header} alt={"Widget Workshop"}/>
         </NavLink>
-      </div>
+      </Grid>
     )}
 } 
 
