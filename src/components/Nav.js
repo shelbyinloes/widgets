@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import { Row, Col, Grid } from "react-bootstrap";
+import { Col, Grid } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
-import Header from './Header.js';
 
 
 const navButtons = {
@@ -23,17 +22,12 @@ class Nav extends Component {
   render(){
     return(
       <div style={navSection}>
-      <Grid fluid>
-      <Col md={4}>
-        <Row>
-            <Header />
-        </Row>
-        <Row>
+        <Grid fluid>
+          <Col md={4}>
             <NavLink style={navButtons} to="/clock">
-                <h1>Clock</h1>
+              <h1>Clock</h1>
             </NavLink>
-        </Row>
-        </Col>
+          </Col>
         </Grid>
       </div>
     )}
