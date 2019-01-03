@@ -7,3 +7,15 @@ html, body {
 /* lighter blue: #A8CDCC */
 /* dark blue/green: #074A54 */
 
+.draw {
+  border: solid 2px black;
+  height: 80%;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 4px 4px 2px #aaa;
+}
