@@ -3,11 +3,13 @@ import React, {Component} from "react";
 import tools from "../images/tools.jpg";
 
 const fill = {
-  // display: 'flex',
-  // justifyContent: 'center',
-  // alignItems: 'center',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   // overflow: 'hidden',
-  height: "600px"
+  background: `url(${tools}) no-repeat center center`,
+  height: '600px',
+  backgroundSize: 'cover'
 }
 
 // const imgStyle ={
@@ -19,10 +21,9 @@ const fill = {
 class Home extends Component {
   render(){
     return(
-      <div>
-          <img src={tools} style={fill} alt={"Widget Workshop"}/>
+      <div style={fill}>
       </div>
     )}
-} 
+}
 
   export default Home;
