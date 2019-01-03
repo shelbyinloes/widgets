@@ -15,7 +15,7 @@ class App extends Component {
       <div>
       <Grid fluid>
         <Row>
-        <Col md={4}>
+        <Col md={4} sm={3}>
             <Header />
             <Nav />
         </Col>
