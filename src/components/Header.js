@@ -10,8 +10,7 @@ const header = {
 }
 
 const headerMain = {
-  backgroundColor: "#A8CDCC",
-  marginTop: "15px"
+  backgroundColor: "#A8CDCC"
 }
 
 class Header extends Component {
