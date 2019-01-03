@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Clock from "./components/Clock.js";
+import Calligraphy from "./components/Calligraphy";
 import Home from "./components/Home.js";
 import Header from "./components/Header.js";
 import Nav from "./components/Nav.js";
@@ -23,6 +24,7 @@ class App extends Component {
         <Switch>
         <Route path='/' component={Home} exact />
         <Route path='/clock' component={Clock} />
+        <Route path='/calligraphy' component={Calligraphy} />
       </Switch>
         </Col>
         </Row>
