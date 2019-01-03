@@ -19,7 +19,7 @@ class App extends Component {
             <Header />
             <Nav />
         </Col>
-        <Col md={6}>
+        <Col md={8} sm={7}>
         <Switch>
         <Route path='/' component={Home} exact />
         <Route path='/clock' component={Clock} />
