@@ -5,19 +5,21 @@ import '../App.css';
 import logo from '../images/logo.png';
 
 const header = {
-  backgroundColor: "#EEE",
-  width: "300px",
-  margin: "50px",
-  fontFamily: "'Rochester', cursive"
+  width: "100%",
+  padding: "30px 0px"
 }
 
+const headerMain = {
+  backgroundColor: "#A8CDCC",
+  marginTop: "15px"
+}
 
 class Header extends Component {
   render(){
     return(
-      <Grid fluid>
+      <Grid fluid style={headerMain}>
         <NavLink to="/">
-              <img src={logo} style={header} alt={"Widget Workshop"}/>
+              <img src={logo} style={header} alt={"Widget Workshop Home"}/>
         </NavLink>
       </Grid>
     )}

@@ -6,15 +6,17 @@ import { NavLink } from 'react-router-dom';
 const navButtons = {
   fontFamily: "'PT Sans Narrow', sans-serif",
   color: "#074A54",
-  textDecoration: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center"
+  textDecoration: "none"
 }
 
 const navSection ={
     backgroundColor: "#A8CDCC",
-    width: "400px"
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "15px"
 }
 
 
