@@ -11,6 +11,18 @@ class Calligraphy extends Component {
     }
   }
 
+  componentDidMount() {
+    //from example:
+    const canvas = this.refs.draw;
+    const ctx = canvas.getContext('2d');
+
+    //from my previous code:
+    ctx.strokeStyle = `${picker.value}`;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.lineWidth = 3;
+
+  }
 
   render() {
     return (
@@ -18,12 +30,12 @@ class Calligraphy extends Component {
         <div className="row header">
             <h1>Calligraphy</h1>
         </div>
-        <canvas className="draw" />
+        <canvas ref="draw" className="draw" />
         <br />
         <label for="base">Color Picker</label>
-        <input className="base" type="color" name="base" value="#ffc600" />
-        <button className="clear">Clear</button>
-        <button className="erase">Erase</button>
+        <input ref="input" className="base" type="color" name="base" value="#ffc600" />
+        <button ref="clear" className="clear">Clear</button>
+        <button ref="erase" className="erase">Erase</button>
     </div>
 
     )
