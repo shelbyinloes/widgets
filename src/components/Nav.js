@@ -25,7 +25,7 @@ class Nav extends Component {
     return(
       <div style={navSection}>
         <Grid fluid>
-          <Col md={4}>
+          <Col>
             <NavLink style={navButtons} to="/clock">
               <h1>Clock</h1>
             </NavLink>
