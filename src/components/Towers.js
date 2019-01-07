@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Grid, Row, Col } from 'react-bootstrap';
 
 
 class Towers extends Component {
@@ -67,7 +68,7 @@ class Towers extends Component {
     return Object.keys(this.state.stacks).map((stack, index) => {
       return (
         <div key="index" onClick={() => this.handleUserClick(stack)}>
-          Stack {stack} {this.renderRings(stack)}
+          Stack {stack.toUpperCase()} {this.renderRings(stack)}
         </div>
       )
     })
@@ -80,14 +81,20 @@ class Towers extends Component {
     }
 
     return(
-      <div style={stackStyle}>
-      <h1>Towers of Hanoi</h1>
-        {this.renderStacks()}
-        <div>
-          {this.state.error}
+      <Grid>
+        <Col md={7}>
+        <Row>
+          <h1>Towers of Hanoi</h1>
+        </Row>
+        <Row style={stackStyle}>
+          {this.renderStacks()}
+        </Row>
+        <Row>
+        {this.state.error}
           Current Stack: {this.state.startStack}
-        </div>
-      </div>
+        </Row>
+      </Col>
+      </Grid>
     )
   }
 }
