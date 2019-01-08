@@ -6,7 +6,8 @@ import { NavLink } from 'react-router-dom';
 const navButtons = {
   fontFamily: "'PT Sans Narrow', sans-serif",
   color: "#074A54",
-  textDecoration: "none"
+  textDecoration: "none",
+  marginBottom: '10px'
 }
 
 const navSection ={
@@ -35,6 +36,7 @@ class Nav extends Component {
             <NavLink style={navButtons} to="/towers">
               <h1>Towers of Hanoi</h1>
             </NavLink>
+            <h4 style={navButtons}>& always more coming!</h4>
           </Col>
         </Grid>
       </div>
