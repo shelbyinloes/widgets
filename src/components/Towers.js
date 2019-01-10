@@ -104,7 +104,8 @@ class Towers extends Component {
     const stackStyle = {
       display: 'flex',
       justifyContent: 'space-around',
-      fontSize: '20px'
+      fontSize: '20px',
+      height: '150px'
     }
 
     const towers = {
