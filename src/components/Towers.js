@@ -18,15 +18,20 @@ class Towers extends Component {
 
   renderRings(letter) {
     const stack = this.state.stacks[letter]
-    return stack.map((ringStack, index) => {
-      return <p style={{
-        backgroundColor: "#074A54", 
-        border: "1px", 
-        color: 'white',
-        borderColor: 'grey', 
-        borderRadius: '2px'}} key={index}>{ringStack}</p>
+    return stack.map((ringStack) => {
+      return <p 
+        style={{
+          backgroundColor: "#074A54", 
+          border: "1px", 
+          color: 'white',
+          borderColor: 'grey', 
+          borderRadius: '2px'}}
+        key={ringStack.toString()}
+        value={ringStack}
+      >{ringStack}</p>
     })
   }
+
 
 
   isValidMove(endStackLetter){
@@ -75,7 +80,7 @@ class Towers extends Component {
   renderStacks(){
     return Object.keys(this.state.stacks).map((stack, index) => {
       return (
-        <div key="index" onClick={() => this.handleUserClick(stack)}>
+        <div key={index} onClick={() => this.handleUserClick(stack)}>
           <h3> Stack {stack.toUpperCase()}</h3> <h4>{this.renderRings(stack)}</h4>
         </div>
       )
@@ -86,8 +91,8 @@ class Towers extends Component {
     if(!this.state.startStack){
       return '';
     }else{
-      const thisStack = this.state.startStack;
-      console.log(thisStack)
+      // const thisStack = this.state.startStack;
+      // console.log(thisStack)
       return this.state.startStack[this.state.startStack.length - 1]
     }
   }
