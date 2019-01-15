@@ -20,16 +20,46 @@ class Towers extends Component {
     const stack = this.state.stacks[letter]
     return stack.map((ringStack) => {
       return <p 
-        style={{
-          backgroundColor: "#074A54", 
-          border: "1px", 
-          color: 'white',
-          borderColor: 'grey', 
-          borderRadius: '2px'}}
+        // style={{
+          // backgroundColor: "#074A54", 
+          // border: "1px", 
+          // color: 'white',
+          // borderColor: 'grey', 
+          // borderRadius: '2px'}}
+        style={this.styleMe(ringStack)}
         key={ringStack.toString()}
-        value={ringStack}
+        // value={ringStack}
       >{ringStack}</p>
     })
+  }
+
+  styleMe(ringStack){
+    if(ringStack === 4){
+      return {
+        backgroundColor: "#cc0000",
+        width: "100px",
+        margin: "0 auto"
+      } 
+    }else if(ringStack === 3){
+      return {
+        backgroundColor: "#ffff66",
+        width: "85px",
+        margin: "0 auto"
+      }
+    }else if(ringStack === 2){
+      return {
+        backgroundColor: "#66ccff",
+        width: "70px",
+        margin: "0 auto"
+      }
+    }else{
+      return {
+        backgroundColor: "#9933ff",
+        width: "55px",
+        margin: "0 auto"
+      }
+    }
+
   }
 
 
@@ -86,6 +116,8 @@ class Towers extends Component {
       )
     })
   }
+
+
 
   showCurrentRing() {
     if(!this.state.startStack){
