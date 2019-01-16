@@ -3,6 +3,7 @@ import './App.css';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Clock from "./components/Clock.js";
 import Towers from "./components/Towers.js";
+import Weather from "./components/Weather.js";
 // import Calligraphy from "./components/Calligraphy";
 import Home from "./components/Home.js";
 import Header from "./components/Header.js";
@@ -26,6 +27,7 @@ class App extends Component {
         <Route path='/' component={Home} exact />
         <Route path='/clock' component={Clock} />
         <Route path='/towers' component={Towers} />
+        <Route path='/weather' component={Weather} />        
         
         {/* <Route path='/calligraphy' component={Calligraphy} /> */}
       </Switch>
