@@ -147,12 +147,20 @@ class Towers extends Component {
 
     const towers = {
       border: '2px solid black',
-      paddingBottom: '30px'
+      paddingBottom: '30px',
+      backgroundColor: 'white',
+      align: 'center'
+    }
+
+    const outterTowers = {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
     }
 
     return(
-      <Grid>
-        <Col md={7} style={towers}>
+      <Grid style={outterTowers}>
+        <Col md={8} mdOffset={2} style={towers}>
         <Row>
           <h1>Towers of Hanoi</h1>
           <Popup trigger={<button>Game Rules</button>} position="right center">

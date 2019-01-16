@@ -22,13 +22,14 @@ class Clock extends Component {
   render() {
 
     const timeStyle ={
-      color: "#074A54",
+      color: "black",
       border: "6px solid black",
       borderRadius: "4px",
       padding: "15px",
       width: "100%", 
       fontSize: "50px",
-      marginTop: "40px"
+      marginTop: "40px",
+      backgroundColor: 'white'
     }
 
     return (

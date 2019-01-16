@@ -2,6 +2,11 @@ html, body {
   text-align: center;
   padding: 15px;
   /* background-color: #A8CDCC; */
+  background: url('./images/workshop.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* lighter blue: #A8CDCC */

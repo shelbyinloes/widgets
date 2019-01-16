@@ -5,13 +5,12 @@ import { NavLink } from 'react-router-dom';
 
 const navButtons = {
   fontFamily: "'PT Sans Narrow', sans-serif",
-  color: "#074A54",
+  color: "#F0393B",
   textDecoration: "none",
   marginBottom: '10px'
 }
 
 const navSection ={
-    backgroundColor: "#A8CDCC",
     width: "100%",
     height: "100%",
     display: "flex",

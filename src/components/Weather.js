@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid } from "react-bootstrap";
 
 const api_key = "3e7a6ba7218095907d2e8f8882626c5d"
 
@@ -42,8 +43,16 @@ class Weather extends Component {
       }
     
       render() {
+
+        const weatherStyle ={
+          backgroundColor: 'white',
+          border: 'black solid 2px',
+          paddingBottom: '50px'
+        }
+
         return (
-          <div>
+          <Grid style={weatherStyle}>
+            {/* <Col md={6} mdOffset={3}> */}
             <div>
                 <h1>Weather Finder</h1>
                 <p>Find out temperature, conditions, and more</p>
@@ -62,7 +71,8 @@ class Weather extends Component {
                 {this.state.description && <p><span >Conditions:</span> {this.state.description}</p>}
                 {this.state.error && <p>{this.state.error}</p>}
             </div>
-          </div>
+            {/* </Col> */}
+          </Grid>
         );
       }
 

@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { Grid } from "react-bootstrap";
 import {NavLink} from 'react-router-dom';
 import '../App.css';
-import logo from '../images/logo.png';
+import logo_transparent from '../images/logo_transparent.png';
 
 const header = {
   width: "100%",
@@ -10,7 +10,7 @@ const header = {
 }
 
 const headerMain = {
-  backgroundColor: "#A8CDCC"
+  // backgroundColor: "#A8CDCC"
 }
 
 class Header extends Component {
@@ -18,7 +18,7 @@ class Header extends Component {
     return(
       <Grid fluid style={headerMain}>
         <NavLink to="/">
-              <img src={logo} style={header} alt={"Widget Workshop Home"}/>
+              <img src={logo_transparent} style={header} alt={"Widget Workshop Home"}/>
         </NavLink>
       </Grid>
     )}
