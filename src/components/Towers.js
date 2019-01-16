@@ -157,7 +157,8 @@ class Towers extends Component {
           <h1>Towers of Hanoi</h1>
           <Popup trigger={<button>Game Rules</button>} position="right center">
             <div>The goal of the game is to get all rings (or blocks) to another stack. You can only 
-              move one ring at a time, and it cannot go on a number smaller than itself. Best of luck!
+              move one ring at a time, and it cannot go on a number smaller than itself. Select a row by clicking 
+              on either the stack or the title. Best of luck!
             </div>
           </Popup>
         </Row>
