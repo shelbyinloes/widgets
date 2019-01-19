@@ -140,7 +140,7 @@ class Towers extends Component {
   render(){
     const stackStyle = {
       display: 'flex',
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
       fontSize: '20px',
       height: '150px'
     }
@@ -149,18 +149,19 @@ class Towers extends Component {
       border: '2px solid black',
       paddingBottom: '30px',
       backgroundColor: 'white',
-      align: 'center'
+      width: '100%'
     }
 
     const outterTowers = {
       display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      width: '100%'
     }
 
     return(
-      <Grid style={outterTowers}>
-        <Col md={8} mdOffset={2} style={towers}>
+      <Grid fluid style={outterTowers}>
+        <Col sm={12} style={towers}>
         <Row>
           <h1>Towers of Hanoi</h1>
           <Popup trigger={<button>Game Rules</button>} position="right center">

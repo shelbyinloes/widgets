@@ -6,15 +6,15 @@ import { NavLink } from 'react-router-dom';
 const navButtons = {
   fontFamily: "'PT Sans Narrow', sans-serif",
   color: "#F0393B",
-  textDecoration: "none",
-  marginBottom: '10px'
+  textDecoration: "none"
 }
 
 const navSection ={
     width: "100%",
-    height: "100%",
+    // height: "100%",
     display: "flex",
-    justifyContent: "center",
+    flexDirection: "column",
+    justifyContent: "space-between",
     alignItems: "center",
     marginBottom: "15px"
 }
@@ -23,9 +23,8 @@ const navSection ={
 class Nav extends Component {
   render(){
     return(
-      <div style={navSection}>
         <Grid fluid>
-          <Col>
+          <Col md={6} style={navSection}>
             <NavLink style={navButtons} to="/clock">
               <h1>Clock</h1>
             </NavLink>
@@ -35,10 +34,10 @@ class Nav extends Component {
             <NavLink style={navButtons} to="/towers">
               <h1>Towers of Hanoi</h1>
             </NavLink>
-            <h4 style={navButtons}>& always more coming!</h4>
           </Col>
+          <h4 style={navButtons}>& always more coming!</h4>
+
         </Grid>
-      </div>
     )}
 } 
 
