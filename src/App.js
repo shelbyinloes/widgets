@@ -6,7 +6,7 @@ import Towers from "./components/Towers.js";
 import Weather from "./components/Weather.js";
 import Home from "./components/Home.js";
 import Header from "./components/Header.js";
-import Nav from "./components/Nav.js";
+import NavDropdown from "./components/NavDropdown.js";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
@@ -18,7 +18,7 @@ class App extends Component {
         <Row>
         <Col md={8} mdOffset={2}>
             <Header />
-            <Nav />
+            <NavDropdown />
         </Col>
         <Col md={8} sm={7}>
           <Switch>
