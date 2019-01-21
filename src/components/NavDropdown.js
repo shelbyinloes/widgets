@@ -1,28 +1,31 @@
 import React, {Component} from "react";
-import { MenuItem, SplitButton } from "react-bootstrap";
-import { NavLink } from 'react-router-dom';
+import { MenuItem, DropdownButton } from "react-bootstrap";
+import { LinkContainer } from 'react-router-bootstrap';
 
 
 class NavDropdown extends Component {
-  render(){
+  render(title, i){
     return(
-        <SplitButton title={"Project Menu"}>
-          <MenuItem id={'clock'}>
-            <NavLink to="/clock">
+        <DropdownButton 
+          title={"Project Menu"}
+          id={"Dropdown"}
+          >
+          <MenuItem eventKey="1">
+            <LinkContainer to="/clock" componentclass="span">
               <h1>Clock</h1>
-            </NavLink>
+            </LinkContainer>
           </MenuItem>
-          <MenuItem id={'weather'}>
-            <NavLink to="/weather">
+          <MenuItem eventKey="2">
+            <LinkContainer to="/weather" componentclass="span">
               <h1>Weather</h1>
-            </NavLink>
+            </LinkContainer>
           </MenuItem>
-          <MenuItem id={'towers of hanoi'}>
-            <NavLink to="/towers">
+          <MenuItem eventKey="3">
+            <LinkContainer to="/towers" componentclass="span">
               <h1>Towers of Hanoi</h1>
-            </NavLink>
+            </LinkContainer>
           </MenuItem>
-        </SplitButton>
+        </DropdownButton>
     )}
 } 
 
