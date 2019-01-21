@@ -149,7 +149,8 @@ class Towers extends Component {
       border: '2px solid black',
       paddingBottom: '30px',
       backgroundColor: 'white',
-      width: '100%'
+      width: '100%',
+      margin: '50px'
     }
 
     const outterTowers = {

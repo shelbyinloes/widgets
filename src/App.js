@@ -20,7 +20,7 @@ class App extends Component {
             <Header />
             <NavDropdown />
         </Col>
-        <Col md={8} sm={7}>
+        <Col sm={10} smOffset={1}>
           <Switch>
             <Route path='/' component={Home} exact />
             <Route path='/clock' component={Clock} />
