@@ -51,6 +51,10 @@ class Weather extends Component {
           margin: '50px'
         }
 
+        const weatherInfo = {
+          marginTop: '18px'
+        }
+
         return (
           <Grid>
             <Col sm={8} style={weatherStyle}>
@@ -65,7 +69,7 @@ class Weather extends Component {
                     <button>Get Weather</button>
                 </form>
             </div>
-            <div>
+            <div style={weatherInfo}>
                 {this.state.city && this.state.country && <p><span >Location:</span> {this.state.city}, {this.state.country}</p>}  
                 {this.state.temp && <p><span >Temperature:</span> {this.state.temp} F</p>}
                 {this.state.humidity && <p><span >Humidity:</span> {this.state.humidity}%</p>}
