@@ -19,6 +19,10 @@ class Clock extends Component {
     setInterval(() => this.currentTime(), 1000)
   }
 
+  componentWillUnmount() {
+    window.clearTimeout(this.currentTime)
+  }
+
   render() {
 
     const timeStyle ={
