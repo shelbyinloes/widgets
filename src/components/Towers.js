@@ -137,6 +137,18 @@ class Towers extends Component {
       }, error: '', startStack: null})
   }
 
+  componentWillUnmount(){
+    this.setState({
+      stacks: {
+        a: [4, 3, 2, 1],
+        b: [],
+        c: []
+      }, 
+      startStack: null,
+      error: ''
+    })
+  }
+
   render(){
     const stackStyle = {
       display: 'flex',
