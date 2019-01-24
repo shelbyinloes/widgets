@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Grid } from 'react-bootstrap';
 
 class Timer extends Component {
   constructor() {
     super();
 
     this.state = {
-      days: 4,
+      days: 0,
       hours: 0,
       min: 0,
       sec: 0,
@@ -25,10 +26,7 @@ class Timer extends Component {
   }
 
   calculateCountdown(endDate) {
-    let diff = (Date.parse(new Date(1548999663000)) - Date.parse(new Date())) / 1000;
-    // console.log(Date.parse(new Date()))
-    // console.log(new Date())
-
+    let diff = (Date.parse(new Date("6 10 2019")) - Date.parse(new Date())) / 1000;
     // clear countdown when date is reached
     if (diff <= 0) return false;
 
@@ -78,22 +76,30 @@ class Timer extends Component {
   render() {
     const countDown = this.state;
 
+    const timerStyle = {
+        backgroundColor: 'white',
+        border: '2px solid black',
+        paddingBottom: '30px'
+    }
+
     return (
-      <div className="Countdown" style={{backgroundColor: 'white'}}>
+      <Grid fluid className="Countdown" style={timerStyle}>
 
-              <strong>{this.addLeadingZeros(countDown.days)}</strong>
-              <span>{countDown.days === 1 ? 'Day' : 'Days'}</span>
+            <h2>Days until my birthday:</h2>
 
-            <strong>{this.addLeadingZeros(countDown.hours)}</strong>
-            <span>Hours</span>
+            <strong>{this.addLeadingZeros(countDown.days)} </strong>
+            <span>{countDown.days === 1 ? 'Day' : 'Days'} </span>
 
-            <strong>{this.addLeadingZeros(countDown.min)}</strong>
-            <span>Min</span>
+            <strong>{this.addLeadingZeros(countDown.hours)} </strong>
+            <span>Hours </span>
+
+            <strong>{this.addLeadingZeros(countDown.min)} </strong>
+            <span>Min </span>
 
 
-            <strong>{this.addLeadingZeros(countDown.sec)}</strong>
-            <span>Sec</span>
-      </div>
+            <strong>{this.addLeadingZeros(countDown.sec)} </strong>
+            <span>Sec </span>
+      </Grid>
     );
   }
 }
