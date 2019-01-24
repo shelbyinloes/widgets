@@ -78,8 +78,7 @@ class Weather extends Component {
         const weatherStyle ={
           backgroundColor: 'white',
           border: 'black solid 2px',
-          paddingBottom: '50px',
-          margin: '50px'
+
         }
 
         const weatherInfo = {
@@ -87,8 +86,8 @@ class Weather extends Component {
         }
 
         return (
-          <Grid>
-            <Col sm={8} style={weatherStyle}>
+          <Grid fluid>
+            <Col sm={8} smOffset={2} style={weatherStyle}>
             <div>
                 <h1>Weather Finder</h1>
                 <p>Find out temperature, conditions, and more</p>

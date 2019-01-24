@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Grid} from 'react-bootstrap';
 
 class Clock extends Component {
 
@@ -33,7 +34,7 @@ class Clock extends Component {
     }
 
     return (
-        <div style={timeStyle}>{this.state.time.toLocaleTimeString()}</div>
+        <Grid fluid style={timeStyle}>{this.state.time.toLocaleTimeString()}</Grid>
     )
   }
 }
