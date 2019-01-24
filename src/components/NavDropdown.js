@@ -4,11 +4,17 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 
 class NavDropdown extends Component {
-  render(title, i){
+  render(){
+
+    const dropdownStyle ={
+      marginBottom: '50px'
+    }
+
     return(
         <DropdownButton 
           title={"Project Menu"}
           id={"Dropdown"}
+          style={dropdownStyle}
           >
           <MenuItem eventKey="1">
             <LinkContainer to="/clock" componentclass="span">

@@ -24,12 +24,11 @@ class Clock extends Component {
 
     const timeStyle ={
       color: "black",
-      border: "6px solid black",
+      border: "2px solid black",
       borderRadius: "4px",
       padding: "15px",
       width: "100%", 
       fontSize: "50px",
-      marginTop: "40px",
       backgroundColor: 'white'
     }
 
