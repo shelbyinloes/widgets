@@ -7,6 +7,7 @@ import Weather from "./components/Weather.js";
 import Home from "./components/Home.js";
 import Header from "./components/Header.js";
 import NavDropdown from "./components/NavDropdown.js";
+import Timer from "./components/Timer.js";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
@@ -24,6 +25,7 @@ class App extends Component {
           <Switch>
             <Route path='/' component={Home} exact />
             <Route path='/clock' component={Clock} />
+            <Route path='/Timer' component={Timer} />
             <Route path='/towers' component={Towers} />
             <Route path='/weather' component={Weather} />        
           </Switch>

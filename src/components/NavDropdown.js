@@ -16,11 +16,16 @@ class NavDropdown extends Component {
             </LinkContainer>
           </MenuItem>
           <MenuItem eventKey="2">
+            <LinkContainer to="/timer" componentclass="span">
+              <h1>Countdown Timer</h1>
+            </LinkContainer>
+          </MenuItem>
+          <MenuItem eventKey="3">
             <LinkContainer to="/weather" componentclass="span">
               <h1>Weather</h1>
             </LinkContainer>
           </MenuItem>
-          <MenuItem eventKey="3">
+          <MenuItem eventKey="4">
             <LinkContainer to="/towers" componentclass="span">
               <h1>Towers of Hanoi</h1>
             </LinkContainer>
