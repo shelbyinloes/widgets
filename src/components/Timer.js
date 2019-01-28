@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
+import { Grid, Col, Row } from 'react-bootstrap';
+import '../App.css';
 
 class Timer extends Component {
   constructor() {
@@ -10,6 +11,11 @@ class Timer extends Component {
       hours: 0,
       min: 0,
       sec: 0,
+      userMonth: '',
+      userDay: '', 
+      userYear: '',
+      userEvent: 'my event',
+      error: undefined
     }
   }
 
@@ -26,7 +32,8 @@ class Timer extends Component {
   }
 
   calculateCountdown(endDate) {
-    let diff = (Date.parse(new Date("6 10 2019")) - Date.parse(new Date())) / 1000;
+    let userDate = (this.state.userMonth + " " + this.state.userDay + " " + this.state.userYear)
+    let diff = (Date.parse(new Date(userDate)) - Date.parse(new Date())) / 1000;
     // clear countdown when date is reached
     if (diff <= 0) return false;
 
@@ -40,7 +47,7 @@ class Timer extends Component {
     };
 
     // calculate time difference between now and expected date
-    if (diff >= (365.25 * 86400)) { // 365.25 * 24 * 60 * 60
+    if (diff >= (365 * 86400)) { // 365.25 * 24 * 60 * 60
       timeLeft.years = Math.floor(diff / (365.25 * 86400));
       diff -= timeLeft.years * 365.25 * 86400;
     }
@@ -61,7 +68,72 @@ class Timer extends Component {
     return timeLeft;
   }
 
+  setUserDate = (e) => {
+    e.preventDefault();
+    const month = e.target.elements.month.value.toString();
+    const day = e.target.elements.day.value.toString();
+    const year = e.target.elements.year.value.toString();
+    let eventTitle = e.target.elements.eventTitle.value;
+
+    if(!eventTitle){
+      eventTitle = 'your event'
+    }
+
+    if(year < 2019) {
+      this.setState({
+        userMonth: undefined,
+        userDay: undefined,
+        userYear: undefined,
+        userEvent: '',
+        error: "Please enter a future date."
+      })
+      return;
+    }
+
+    if((day > 31) || (day < 1)){
+      this.setState({
+        userMonth: undefined,
+        userDay: undefined,
+        userYear: undefined,
+        userEvent: '',
+        error: "Please enter a valid day (1-31)."
+      })
+      return;
+    }
+
+    if((month > 12) || (month < 1)){
+      this.setState({
+        userMonth: undefined,
+        userDay: undefined,
+        userYear: undefined,
+        userEvent: '',
+        error: "Please enter a valid month (1-12)."
+      })
+      return;
+    }
+
+
+    if (month && day && year){
+      this.setState({
+        userMonth: month,
+        userDay: day,
+        userYear: year,
+        userEvent: eventTitle,
+        error: undefined
+      });
+    } else {
+      this.setState({
+        userMonth: undefined,
+        userDay: undefined,
+        userYear: undefined,
+        userEvent: '',
+        error: "Please type in correct date."
+      });
+    }
+  }
+
   stop() {
+    // for unmouting component
     clearInterval(this.interval);
   }
 
@@ -79,26 +151,92 @@ class Timer extends Component {
     const timerStyle = {
         backgroundColor: 'white',
         border: '2px solid black',
-        paddingBottom: '30px'
+        padding: '30px'
     }
 
     return (
-      <Grid fluid className="Countdown" style={timerStyle}>
+      <Grid fluid >
+        <Col sm={8} smOffset={2} style={timerStyle}>
+          <Row>
+            <form onSubmit={this.setUserDate}>
+              <input 
+                type="number" 
+                name="month" 
+                placeholder="Month"
+                id="inputMonth"
+              ></input> <span>/</span>
+              <input 
+                type="number" 
+                name="day" 
+                placeholder="Day"
+                id="inputDay"
+              ></input> <span>/</span>
+              <input 
+                type="number" 
+                name="year" 
+                placeholder="Year"
+                id="inputYear"
+              ></input>
+              <input 
+                type="text" 
+                name="eventTitle" 
+                placeholder="Event Title"
+                id="inputEvent"
+              ></input>
+              <br></br>
+              <button 
+                style={{borderRadius: '5px'}}
+                type="submit"
+                id="getCountdown"
+              >Get Countdown</button>
+            </form>
+          </Row>
+          <Row>
+            {this.state.userDay &&
+             <h2>Time until {this.state.userEvent}:</h2>
+            }
+          </Row>
+          <Row id="showTimer">
+            {this.state.years > 0 &&
+              <> 
+              <strong>{this.addLeadingZeros(countDown.years)}</strong>
+              <span>{countDown.years === 1 ? '  Year  ' : '  Years  '} </span>
+              </>
+            }
 
-            <h2>Days until my birthday:</h2>
+            {this.state.userDay &&
+              <>
+              <strong>{this.addLeadingZeros(countDown.days)}</strong>
+              <span>{countDown.days === 1 ? ' Day  ' : ' Days  '} </span>
+              </>
+            }
 
-            <strong>{this.addLeadingZeros(countDown.days)} </strong>
-            <span>{countDown.days === 1 ? 'Day' : 'Days'} </span>
+            {this.state.userDay &&
+              <>
+              <strong>{this.addLeadingZeros(countDown.hours)}</strong>
+              <span> Hours  </span>
+              </>
+            }
 
-            <strong>{this.addLeadingZeros(countDown.hours)} </strong>
-            <span>Hours </span>
+            {this.state.userDay &&
+              <>
+              <strong>{this.addLeadingZeros(countDown.min)}</strong>
+              <span> Minutes  </span>
+              </>
+            }
 
-            <strong>{this.addLeadingZeros(countDown.min)} </strong>
-            <span>Min </span>
+            {this.state.userDay &&
+              <>
+              <strong>{this.addLeadingZeros(countDown.sec)}</strong>
+              <span> Seconds  </span>
+              </>
+            }
 
-
-            <strong>{this.addLeadingZeros(countDown.sec)} </strong>
-            <span>Sec </span>
+          </Row>
+          <Row>
+          {this.state.error && <p>{this.state.error}</p>}
+          </Row>
+        </Col>
       </Grid>
     );
   }
