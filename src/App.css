@@ -26,36 +26,30 @@ html, body {
 #inputMonth {
   width: 70px;
   outline: none;
-  border-bottom: solid #F0393B 2px;
-  border-top: solid white 0px;
-  border-left: solid white 0px;
-  border-right: solid white 0px;
 }
+
 
 #inputDay {
   width: 70px;
   margin-left: 4px;
-  outline: none;
-  border-bottom: solid #F0393B 2px;
-  border-top: solid white 0px;
-  border-left: solid white 0px;
-  border-right: solid white 0px;
 }
 
 #inputYear {
   width: 70px;
   margin-left: 4px;
   margin-right: 10px;
-  outline: none;
-  border-bottom: solid #F0393B 2px;
-  border-top: solid white 0px;
-  border-left: solid white 0px;
-  border-right: solid white 0px;
 }
 
 #inputEvent {
   width: 140px;
   margin: 4px;
+}
+
+#inputEvent:focus, #inputMonth:focus, #inputDay:focus, #inputYear:focus {
+  border-bottom: solid #F0393B 3px;
+}
+
+.timerInputs {
   outline: none;
   border-bottom: solid #F0393B 2px;
   border-top: solid white 0px;

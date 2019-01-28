@@ -164,24 +164,28 @@ class Timer extends Component {
                 name="month" 
                 placeholder="Month"
                 id="inputMonth"
+                className="timerInputs"
               ></input> <span>/</span>
               <input 
                 type="number" 
                 name="day" 
                 placeholder="Day"
                 id="inputDay"
+                className="timerInputs"
               ></input> <span>/</span>
               <input 
                 type="number" 
                 name="year" 
                 placeholder="Year"
                 id="inputYear"
+                className="timerInputs"
               ></input>
               <input 
                 type="text" 
                 name="eventTitle" 
                 placeholder="Event Title"
                 id="inputEvent"
+                className="timerInputs"
               ></input>
               <br></br>
               <button 
