@@ -9,8 +9,6 @@ html, body {
   background-size: cover;
 }
 
-/* lighter blue: #A8CDCC */
-/* dark blue/green: #074A54 */
 
 .draw {
   border: solid 2px black;
@@ -23,4 +21,56 @@ html, body {
   justify-content: center;
   font-family: 'Dancing Script', cursive;
   text-shadow: 4px 4px 2px #aaa;
+}
+
+#inputMonth {
+  width: 70px;
+  outline: none;
+  border-bottom: solid #F0393B 2px;
+  border-top: solid white 0px;
+  border-left: solid white 0px;
+  border-right: solid white 0px;
+}
+
+#inputDay {
+  width: 70px;
+  margin-left: 4px;
+  outline: none;
+  border-bottom: solid #F0393B 2px;
+  border-top: solid white 0px;
+  border-left: solid white 0px;
+  border-right: solid white 0px;
+}
+
+#inputYear {
+  width: 70px;
+  margin-left: 4px;
+  margin-right: 10px;
+  outline: none;
+  border-bottom: solid #F0393B 2px;
+  border-top: solid white 0px;
+  border-left: solid white 0px;
+  border-right: solid white 0px;
+}
+
+#inputEvent {
+  width: 140px;
+  margin: 4px;
+  outline: none;
+  border-bottom: solid #F0393B 2px;
+  border-top: solid white 0px;
+  border-left: solid white 0px;
+  border-right: solid white 0px;
+}
+
+#getCountdown {
+  margin-top: 20px
+}
+
+strong {
+  color: #F0393B ;
+}
+
+#showTimer {
+  font-size: 20px;
 }
