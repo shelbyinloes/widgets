@@ -10,18 +10,6 @@ html, body {
 }
 
 
-.draw {
-  border: solid 2px black;
-  height: 80%;
-  width: 100%;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  font-family: 'Dancing Script', cursive;
-  text-shadow: 4px 4px 2px #aaa;
-}
 
 #inputMonth {
   width: 70px;
